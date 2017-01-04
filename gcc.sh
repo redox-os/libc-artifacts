@@ -6,6 +6,7 @@ then
 	LIBRARY_PATH="$ROOT/usr/lib" \
 	gcc -v \
 	-static -nostartfiles -nostdlib -nodefaultlibs \
+	--sysroot "$ROOT" \
 	-undef -imacros "$ROOT/define.h" \
 	"$@" \
 	"$ROOT/usr/lib/crt0.o" \
@@ -18,6 +19,7 @@ then
 	LIBRARY_PATH="$ROOT/usr/lib" \
 	x86_64-elf-gcc -v \
 	-static -nostartfiles -nostdlib -nodefaultlibs \
+	--sysroot "$ROOT" \
 	-undef -imacros "$ROOT/define.h" \
 	"$@" \
 	"$ROOT/usr/lib/crt0.o" \
