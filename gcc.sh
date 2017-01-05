@@ -15,7 +15,7 @@ fi
 C_INCLUDE_PATH="$ROOT/usr/include" \
 LIBRARY_PATH="$ROOT/usr/lib" \
 "$compiler" \
--static -nostartfiles -nostdlib -nodefaultlibs \
+-static -nostartfiles -nostdlib -nodefaultlibs -ffreestanding \
 --sysroot "$ROOT" \
 -undef -imacros "$ROOT/define.h" \
 "$@" \
