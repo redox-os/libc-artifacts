@@ -22,4 +22,5 @@ LIBRARY_PATH="$ROOT/usr/lib" \
 "$ROOT/usr/lib/crt0.o" \
 "$ROOT/usr/lib/libm.a" \
 "$ROOT/usr/lib/libgcc.a" \
-"$ROOT/usr/lib/libc.a"
+"$ROOT/usr/lib/libc.a" \
+-specs=$ROOT/gcc.spec
