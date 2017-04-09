@@ -1,15 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ROOT="$(cd `dirname $0` && pwd)"
 
-if [ "`uname`" == "Linux" ]
+if [ "$GCC" != "" ]
 then
-	compiler="gcc"
-elif [ "`uname`" == "Darwin" ]
-then
-	compiler="x86_64-elf-gcc"
+    compiler="$GCC"
 else
-	echo "$0: `uname` not supported"
-	exit 1
+    if [ "`uname`" == "Linux" ]
+    then
+	    compiler="gcc"
+    elif [ "`uname`" == "Darwin" ]
+    then
+	    compiler="x86_64-elf-gcc"
+    else
+	    echo "$0: `uname` not supported"
+	    exit 1
+    fi
 fi
 
 C_INCLUDE_PATH="$ROOT/usr/include" \
