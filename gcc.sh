@@ -19,8 +19,8 @@ LIBRARY_PATH="$ROOT/usr/lib" \
 --sysroot "$ROOT" \
 -undef -imacros "$ROOT/define.h" \
 "$@" \
-"$ROOT/usr/lib/crt0.o" \
-"$ROOT/usr/lib/libm.a" \
-"$ROOT/usr/lib/libgcc.a" \
-"$ROOT/usr/lib/libc.a" \
+-Xlinker "$ROOT/usr/lib/crt0.o" \
+-Xlinker "$ROOT/usr/lib/libm.a" \
+-Xlinker "$ROOT/usr/lib/libgcc.a" \
+-Xlinker "$ROOT/usr/lib/libc.a" \
 -specs=$ROOT/gcc.spec
