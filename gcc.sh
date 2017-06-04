@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ROOT="$(cd `dirname $0` && pwd)"
 
 if [ "`uname`" == "Linux" ]
@@ -7,6 +7,9 @@ then
 elif [ "`uname`" == "Darwin" ]
 then
 	compiler="x86_64-elf-gcc"
+elif [ "`uname`" == "FreeBSD" ]
+then
+	compiler="gcc"
 else
 	echo "$0: `uname` not supported"
 	exit 1
